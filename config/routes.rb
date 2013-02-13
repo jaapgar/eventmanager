@@ -1,4 +1,7 @@
 Eventmanager::Application.routes.draw do
+  resources :contests
+
+
   resources :exhibitors
 
 
