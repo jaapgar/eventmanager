@@ -1,0 +1,23 @@
+<h1>Listing exhibitior_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exhibitior_categories.each do |exhibitior_category| %>
+  <tr>
+    <td><%= exhibitior_category.name %></td>
+    <td><%= link_to 'Show', exhibitior_category %></td>
+    <td><%= link_to 'Edit', edit_exhibitior_category_path(exhibitior_category) %></td>
+    <td><%= link_to 'Destroy', exhibitior_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exhibitior category', new_exhibitior_category_path %>

@@ -1,0 +1,43 @@
+<div id="main" class="six columns">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @meeting.name %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @meeting.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @meeting.end_date %>
+</p>
+
+<p>
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', meetings_path %>
+
+	
+</div>
+
+<div id="sidebar" class="six columns">
+  <b>Venue:</b>
+  <%= @meeting.venue.name %>
+</p>
+<p>
+  <b>Venue Details:</b><br />
+  <%= @meeting.venue.address %><br />
+  <%= @meeting.venue.city %>  <%= @meeting.venue.state%>  <%=@meeting.venue.zip %>
+</p>
+
+<p>
+	<b>Sponsor:</b>
+	<% @sponsor.each do |m|%>
+		<%= m.logo %>
+	<% end %>
+</p>
+</div>
+

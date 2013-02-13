@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	
+	<!-- Uncomment to make IE8 render like IE7 -->
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+	
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  
+	<!-- Included CSS Files -->
+	<%= stylesheet_link_tag    "application" %>
+	
+	<!-- Included JS Files  -->
+	<%= javascript_include_tag "application" %>
+  
+  <%= csrf_meta_tags %>
+</head>
+
+<body>	
+	<div class="row">
+<div id="wrapper" class="tweleve columns">
+	<div id="header" class="twelve columns">
+		<h1>This is the Header</h1>
+	</div>
+	
+	<div class="row">
+	<div id="navigation" class="tweleve columns">
+		<ul class="nav-bar">
+			<li class="active"><%= link_to 'Meetings', meetings_path %></li>
+			<li class="active"><%= link_to 'Sponsors', sponsors_path %></li>
+			<li class="active"><%= link_to 'Exhibitors', exhibitors_path %></li>
+			<li class="active"><%= link_to 'Venues', venues_path %></li>
+			<li class="active"><%= link_to 'Exhibitors Category', exhibitior_categories_path %></li>
+		</ul>
+	</div>
+	</div>
+	
+	<div class="row">
+  		<%= yield %>
+    </div>
+
+   
+    
+    <div class="row">
+	<div id="footer" class="twelve columns">
+    	<h5>This is the footer.</h5>
+    </div>
+    </div>
+</div> 
+</div>
+</body>
+</html>

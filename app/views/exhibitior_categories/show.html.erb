@@ -1,0 +1,21 @@
+<div id="main" class="six columns">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @exhibitior_category.name %>
+</p>
+<%= link_to 'Edit', edit_exhibitior_category_path(@exhibitior_category) %> |
+<%= link_to 'Back', exhibitior_categories_path %>
+</div>
+<div id="sidebar" class="six columns">
+    	
+	<b>Exhibitor</b>
+	<% @exhibitor.each do |m|%>
+		<%= m.name %>
+	<% end %>
+</p>
+</div>
+
+
+
